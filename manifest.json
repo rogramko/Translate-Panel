@@ -1,0 +1,60 @@
+{
+
+  "name": "__MSG_extensionName__",
+
+"options_page":"options.html",
+
+"options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+
+  "description": "__MSG_extensionDescription__",
+
+"default_locale": "en",
+
+  "version": "1.0",
+
+  "permissions": ["contextMenus",  
+        "storage",
+       
+        "contextMenus","tabs"],
+
+ 
+
+
+  "background": {
+   
+    "service_worker": "sample.js"
+  },
+
+ "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["dinle.js"]
+      
+    }
+  ],
+
+"icons": {
+
+        "16": "yeni48.png",
+        "32": "yeni48.png",
+        "48": "yeni48.png",
+        "128": "yeni128.png"
+       
+
+         },
+
+"web_accessible_resources": [
+  {
+    
+      "resources": ["yeni128arkabeyaz.png"],
+      "matches": [ "<all_urls>" ]
+    
+    
+      
+  }],
+
+  "manifest_version": 3
+}

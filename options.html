@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+<style>
+   
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+    .container{
+       margin: auto;
+       width: 60%;
+       height: 100%;
+       padding: 50px;
+    }
+    select{
+
+        padding: 5px;
+        background-color: white;
+       
+    }
+    select:hover, input[type="color"]:hover{
+
+        border-color:orangered;
+    }
+    input[type="color"]{
+
+        background-color: white;
+        padding: 0px;
+    }
+    h3{
+        color: orangered;
+        
+    }
+    ul {
+       
+        border-left: 3px solid rgba(255, 68, 0, 0.296);
+        
+       
+    }
+    li{
+        margin-top: 30px;
+    }
+    #translatePanelName ,span{
+        font-family:'Comfortaa', cursive;
+
+    }
+    #translatePanelName{
+        font-size: 27px;
+    }
+   .sidebar{
+        
+        float:left;
+    
+    
+   }
+   .rightsidebar{
+       margin-left: 50px;
+       float: left;
+      
+   
+   }
+  
+   
+  
+ 
+</style>
+    
+	
+	
+</head>
+	
+	
+	
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <img id ="logo" width="100px" height="100px" alt="Translate Panel">
+        <h1 id="translatePanelName"></h1>
+        <span id="version">version </span>
+        
+        
+    </div>
+<div class="rightsidebar">
+    <ul style="list-style-type:none;">
+        <li>
+            <h1 id="settings"></h1>
+        </li>
+        <li> 
+            <h3 id="cevirilecekDilbaslik"></h3>    
+            <select id="cevirilecekDil"></select>
+        </li>
+                <li>
+                    <h3 id="arkaplanrengibaslik"></h3>
+                    <input type="color" id="arkaplanrengi" name="arkaplanrengi" value="#ffffff" >
+                </li>
+                <li>
+                    <h3 id="fontBoyutubaslik"></h3>
+                    <select id="fontBoyutu" name="fontBoyutu">
+                        <option value="12px">12</option>
+                        <option value="13px" selected>13</option>
+                        <option value="14px">14</option>
+                        <option value="15px">15</option>    
+                    </select>
+                </li>
+               
+    </ul>
+
+</div>
+       
+    </div>
+	
+	<script src="options.js">
+
+            
+    </script>
+</body>
+
+</html>
