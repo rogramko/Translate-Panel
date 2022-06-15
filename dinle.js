@@ -505,14 +505,15 @@ document.addEventListener("mouseup", onMouseup);
 					getCevirilecekDil =a.cevirilecelkdildepolanacakdeger;
 					getFontBoyutu =a.fontboyutudepolanacakdeger;
 		
-			
-			
+			ceviripaneli.style.backgroundColor =	getArkaplanRengi;
+			ceviripaneli.style.fontSize        =	getFontBoyutu;	
 			panelPDF.style.backgroundColor     = 	getArkaplanRengi;
 			panelPDF.style.fontSize			   =	getFontBoyutu;
 	
 	})
    
   
+	
    })
    
 	
