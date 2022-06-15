@@ -20,13 +20,13 @@
 
   "background": {
    
-    "service_worker": "sample.js"
+    "service_worker": "tpBackground.js"
   },
 
  "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["dinle.js"]
+      "js": ["tpContent.js"]
       
     }
   ],
