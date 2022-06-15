@@ -84,7 +84,7 @@ function init() {
                   position:fixed;
                   background-repeat: no-repeat;
                   background-size: cover;
-                  background-image: url(${chrome.runtime.getURL("yeni128arkabeyaz.png")});
+                  background-image: url(${chrome.runtime.getURL("128bgwhite.png")});
                   width: 25px;
                   height: 25px;
                   cursor: pointer;

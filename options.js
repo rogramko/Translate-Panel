@@ -15,7 +15,7 @@ document.getElementById("settings").textContent=settings;
 document.getElementById("arkaplanrengibaslik").textContent=arkaplanrengibaslik;
 document.getElementById("fontBoyutubaslik").textContent=fontBoyutubaslik;
 document.getElementById("cevirilecekDilbaslik").textContent=cevirilecekDilbaslik;
-document.getElementById("logo").src = chrome.runtime.getURL("yeni128arkabeyaz.png");
+document.getElementById("logo").src = chrome.runtime.getURL("128bgwhite.png");
 
 document.getElementById("version").textContent+=chrome.runtime.getManifest().version;
 
