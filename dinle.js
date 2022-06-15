@@ -1,6 +1,4 @@
- //MAİN branch
- //rgb(215, 193, 70);
-//rgb(9,235,251) 141,49,216    205,54,4   252,85,29   194,178,187   209,61,61   rgb(172,56,17)   #31d8c4  #EEF218  rgb(112 62 229)
+ 
 
 
 
@@ -10,9 +8,7 @@ var getCevirilecekDil;
 
 chrome.storage.local.get(null,a=>{
 		
-	console.log("kayitli arkaplan rengi: "+a.arkaplanrengidepolanacakdeger);
-	console.log("kayitli font boyutu: "+a.fontboyutudepolanacakdeger);
-	console.log("kayitli cevirilecek dil kodu "+a.cevirilecelkdildepolanacakdeger);
+	
 			
 	 getArkaplanRengi = a.arkaplanrengidepolanacakdeger;
 	 getFontBoyutu = a.fontboyutudepolanacakdeger;
@@ -22,7 +18,7 @@ chrome.storage.local.get(null,a=>{
 
  
 
-  console.log("burası dinle.js ");
+ 
   
   var xmlhttp; 
  
@@ -43,10 +39,10 @@ document.addEventListener("mouseup", onMouseup);
 	 
 	
 
-        if (e.button != 0) {return;} //tiklanilan farenin sag tusu ise hicbirsey yapma
-        if (e.target == element) {return;} // tiklanilan nesne element ise hicbirsey yapma
+        if (e.button != 0) {return;} 
+        if (e.target == element) {return;} 
         
-        setTimeout(()=>onUp(e), 120); // kosullar gecildi ise asil yapacagimiz isi 120 milisaniye sonra calistir
+        setTimeout(()=>onUp(e), 120); 
     }
 	
 	
@@ -54,8 +50,8 @@ document.addEventListener("mouseup", onMouseup);
         
         
 
-         xKonumTiklanildigindaki = e.clientX  // farenin x konumu alindi
-         yKonumTiklanildigindaki = e.clientY  // farenin y konumu alindi
+         xKonumTiklanildigindaki = e.clientX  
+         yKonumTiklanildigindaki = e.clientY  
 
         
             init();
@@ -63,10 +59,10 @@ document.addEventListener("mouseup", onMouseup);
 	   if(selection!="")
 	   {
 			
-            ceviributonu.style.left = xKonumTiklanildigindaki + 10 + "px"; // ceviri butonu konumunu ayarla
-            ceviributonu.style.top =  yKonumTiklanildigindaki - 20 + "px"; // ceviri butonu konumunu ayarla
+            ceviributonu.style.left = xKonumTiklanildigindaki + 10 + "px"; 
             ceviributonu.style.top =  yKonumTiklanildigindaki - 20 + "px";
-            ceviributonu.style.display = "block"; //secim bos bir dize degilse yani bir secim yapılmıs ise ceviri butonunu goster
+            ceviributonu.style.top =  yKonumTiklanildigindaki - 20 + "px";
+            ceviributonu.style.display = "block"; 
 	   }
 		
         
@@ -80,7 +76,7 @@ document.addEventListener("mouseup", onMouseup);
 
 
     function init() {
-        if (element) {return;} //elementimiz varsa birdaha olusturma yani hicbirsey yapma ama yoksa olustur
+        if (element) {return;} 
 		
 		
         element = document.createElement("div");
@@ -147,8 +143,8 @@ document.addEventListener("mouseup", onMouseup);
               }`;
 		
 
-        ceviributonu.addEventListener("click", onClick); // ceviri butonuna tiklanirsa onclick adli metodu calistir
-        document.addEventListener("mousedown", onDown);  // dokumanda herhangi biryere tiklanildigi anda ondown metodunu calsitir
+        ceviributonu.addEventListener("click", onClick); 
+        document.addEventListener("mousedown", onDown);  
 		dragElement(ceviripaneli);
     }
 	
@@ -161,7 +157,7 @@ document.addEventListener("mouseup", onMouseup);
 		
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   
-    // otherwise, move the DIV from anywhere inside the DIV:
+    
     elmnt.onmousedown = dragMouseDown;
   
 
@@ -169,30 +165,30 @@ document.addEventListener("mouseup", onMouseup);
 	 
     e = e || window.event;
     e.preventDefault();
-    // get the mouse cursor position at startup:
+    
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
+    
     document.onmousemove = elementDrag;
   }
 
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
-    // calculate the new cursor position:
+   
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
-    // set the element's new position:
+    
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
 	
   }
 
   function closeDragElement() {
-    // stop moving when mouse button is released:
+    
     document.onmouseup = null;
     document.onmousemove = null;
   }
@@ -205,38 +201,7 @@ document.addEventListener("mouseup", onMouseup);
 	 function onClick(e) {
        
  	 alert(e);
-	/*	 
-		 var xmlhttp = new XMLHttpRequest();
-			
-							var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=tr&dt=t&dt=bd&dj=1&q="+eskiselection;
-							
-							xmlhttp.onreadystatechange = function() {
-							 
-							  if (this.readyState == 4 && this.status == 200) {
-								  console.log(xmlhttp.getResponseHeader('Content-Type'));
-								 var cevirilenJsonveri = JSON.parse(this.responseText);
-							     
-								 gelenJsonCevabiDuzenle(cevirilenJsonveri);
-							       
-								
-							  }
-							 
-							  xmlhttp.onerror= function(e) {
-								    
-									
-									alert("Error fetching " );
-									}
-							  
-							};
-
-
-							xmlhttp.open("GET", url, true);
-
-							xmlhttp.setRequestHeader("Content-type", "text/plain; charset=utf-8");
-
-							xmlhttp.send();
-		 
-		 */
+	
 
 
 						if(typeof e == "string")	
@@ -282,7 +247,7 @@ document.addEventListener("mouseup", onMouseup);
 							xmlhttp.send();
 			
 									
-		}); // promise bitti 
+		}); 
 			
 		sozver.then(resolveValue =>
 		{
@@ -320,7 +285,7 @@ document.addEventListener("mouseup", onMouseup);
 		);
 								
 							
-							//json veriyi duzenle
+							
 							function gelenJsonCevabiDuzenle(duzenlenecekJson)
 							{
 																
@@ -329,7 +294,7 @@ document.addEventListener("mouseup", onMouseup);
 								for(var i=0;i<duzenlenecekJson.sentences.length;i++)
 								{
 									
-									// ceviriduzenlendi +=duzenlenecekJson.sentences[i].trans;
+								
 									
 									duzenlenecekJson.sentences[i].trans.split(/(\n)/g).map((bir,iki,uc)=>{
 									
@@ -384,7 +349,7 @@ document.addEventListener("mouseup", onMouseup);
 									ceviripaneli.style.top  = yKonumTiklanildigindaki - 20 + "px";
 								}
 							}
-							//json veriyi duzenleme bitti
+						
 		
     }
 	
@@ -421,8 +386,7 @@ document.addEventListener("mouseup", onMouseup);
 	
 	
 	
-  /*    ----------------   WEB SAYFA CEVİRİ İSLEMLERİ BİTTİ      ----------------      */	
-  /*    ----------------   PDF SAYFA CEVİRİ İSLEMLERİ BASLADİ    ----------------      */	
+	
 	
 
   
@@ -541,9 +505,8 @@ document.addEventListener("mouseup", onMouseup);
 					getCevirilecekDil =a.cevirilecelkdildepolanacakdeger;
 					getFontBoyutu =a.fontboyutudepolanacakdeger;
 		
-			console.log(getCevirilecekDil);
-			//ceviripaneli.style.backgroundColor =	getArkaplanRengi;
-			//ceviripaneli.style.fontSize        =	getFontBoyutu;
+			
+			
 			panelPDF.style.backgroundColor     = 	getArkaplanRengi;
 			panelPDF.style.fontSize			   =	getFontBoyutu;
 	

@@ -2,7 +2,7 @@ const arkaplanrengi = document.getElementById("arkaplanrengi");
 const fontBoyutu = document.getElementById("fontBoyutu");
 const cevirilecekDil = document.getElementById("cevirilecekDil");
 
-//chrome.storage.local.remove("arkaplanrengidepolanacakdeger",a=>{console.log("silindi:")});
+
 
 let settings = chrome.i18n.getMessage("settings");
 let arkaplanrengibaslik = chrome.i18n.getMessage("settingSubTitle1");
