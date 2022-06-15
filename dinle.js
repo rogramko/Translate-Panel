@@ -423,6 +423,7 @@ chrome.storage.onChanged.addListener(function (list, sync) {
 
 		getBackgroundColor = a.arkaplanrengidepolanacakdeger;
 		getTranlateLanguage = a.cevirilecelkdildepolanacakdeger;
+		getFontBoyutu =a.fontboyutudepolanacakdeger;
 		ceviripaneli.style.backgroundColor = getBackgroundColor;
 		ceviripaneli.style.fontSize = getFontSize;
 		panelPDF.style.backgroundColor = getBackgroundColor;
