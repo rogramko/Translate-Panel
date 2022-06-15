@@ -38,10 +38,10 @@
 
 "icons": {
 
-        "16": "yeni48.png",
-        "32": "yeni48.png",
-        "48": "yeni48.png",
-        "128": "yeni128.png"
+        
+        "48": "48.png",
+        "128": "128.png",
+        "512": "512.png"
        
 
          },
@@ -49,7 +49,7 @@
 "web_accessible_resources": [
   {
     
-      "resources": ["yeni128arkabeyaz.png"],
+      "resources": ["128bgwhite.png"],
       "matches": [ "<all_urls>" ]
     
     
