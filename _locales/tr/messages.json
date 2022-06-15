@@ -30,6 +30,11 @@
 		"message": "Çevirilecek dil",
     		"description": "Description of the extension."
 			},
+ "contextMenu":{
+
+		"message":"Çevir",
+		"description": "Description of the extension."
+	},
 
   "lang_af": {
     "message": "Afrikaanca"

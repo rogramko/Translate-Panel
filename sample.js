@@ -23,7 +23,6 @@ if(tab.active==false)
   
 });
 	
-	alert("blok calisti");
 	console.log("tab önce: " + JSON.stringify(tab));
 	chrome.tabs.update({active:true,highlighted:true,selected:true});
 	console.log("tab sonra: " + JSON.stringify(tab));
@@ -53,11 +52,19 @@ chrome.contextMenus.onClicked.addListener(onClickHandler); //context menuye bir 
 chrome.runtime.onInstalled.addListener(function() {
 	
   chrome.runtime.openOptionsPage();
-  chrome.contextMenus.create({"title": "secili yaziyi cevir", "id": "seciliyaziyicevir", "contexts":["selection"]});
+ 
   
   
   
 });
+
+chrome.runtime.onStartup.addListener(function(){
+
+	let contextMenu = chrome.i18n.getMessage("contextMenu");
+	chrome.contextMenus.create({"title": contextMenu, "id": "seciliyaziyicevir", "contexts":["selection"]});
+}
+	 
+  )
 
 
 

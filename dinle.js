@@ -6,9 +6,9 @@ var getTranlateLanguage;
 
 chrome.storage.local.get(null, a => {
 
-	getBackgroundColor = a.arkaplanrengidepolanacakdeger;
-	getFontSize = a.fontboyutudepolanacakdeger;
-	getTranlateLanguage = a.cevirilecelkdildepolanacakdeger;
+	getBackgroundColor = a.storageBgColor;
+	getFontSize = a.storageFontSize;
+	getTranlateLanguage = a.storageTransLan;
 
 })
 
@@ -137,10 +137,6 @@ function onDown(e) {
 
 function onClick(e) {
 
-	alert(e);
-
-
-
 	if (typeof e == "string") {
 		eskiselection = e;
 	}
@@ -252,7 +248,7 @@ function onClick(e) {
 
 
 		if (typeof e != "string" && typeof e != "undefined") {
-			console.log("HTML SAYFASI BUTONDAN  CEVİRİ ");
+			
 			ceviripaneli.innerHTML = ceviriduzenlendi;
 			ceviripaneli.style.display = "block";
 			ceviributonu.style.display = "none";
@@ -260,12 +256,12 @@ function onClick(e) {
 			ceviripaneli.style.top = e.clientY - 20 + "px";
 		}
 		else if (typeof e == "string") {
-			console.log("PDF SAYFASI CONTEXT MENDUEN CEVİRİ");
+			
 			panelPDF.innerHTML = ceviriduzenlendi;
 			panelPDF.style.display = "block";
 		}
 		else {
-			console.log("HTML SAYFASI CONTEXT MENDUEN CEVİRİ ");
+			
 			ceviripaneli.innerHTML = ceviriduzenlendi;
 			ceviripaneli.style.display = "block";
 			ceviributonu.style.display = "none";
@@ -341,6 +337,7 @@ document.onselectionchange = function () {
 chrome.runtime.onMessage.addListener((mesaj, sender, sendResponse) => {
 
 	if (mesaj.yollanacakMesaj == "contextMenuHTMLPage") {
+		
 		onClick();
 
 	}
@@ -421,9 +418,9 @@ chrome.storage.onChanged.addListener(function (list, sync) {
 
 	chrome.storage.local.get(null, a => {
 
-		getBackgroundColor = a.arkaplanrengidepolanacakdeger;
-		getTranlateLanguage = a.cevirilecelkdildepolanacakdeger;
-		getFontSize =a.fontboyutudepolanacakdeger;
+		getBackgroundColor = a.storageBgColor;
+		getTranlateLanguage = a.storageTransLan;
+		getFontSize =a.storageFontSize;
 		ceviripaneli.style.backgroundColor = getBackgroundColor;
 		ceviripaneli.style.fontSize = getFontSize;
 		panelPDF.style.backgroundColor = getBackgroundColor;

@@ -30,6 +30,11 @@
 		"message": "Translation language",
     		"description": "Description of the extension."
 			},
+ "contextMenu":{
+
+		"message":"Translate",
+		"description": "Description of the extension."
+	},
 
 
  "lang_af": {
