@@ -52,16 +52,18 @@ chrome.contextMenus.onClicked.addListener(onClickHandler); //context menuye bir 
 chrome.runtime.onInstalled.addListener(function() {
 	
   chrome.runtime.openOptionsPage();
- 
-  
+  chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextMenu"), "id": "seciliyaziyicevir", "contexts":["selection"]});
   
   
 });
 
+
 chrome.runtime.onStartup.addListener(function(){
 
-	let contextMenu = chrome.i18n.getMessage("contextMenu");
-	chrome.contextMenus.create({"title": contextMenu, "id": "seciliyaziyicevir", "contexts":["selection"]});
+	chrome.contextMenus.removeAll();
+	chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextMenu"), "id": "seciliyaziyicevir", "contexts":["selection"]});
+
+	
 }
 	 
   )
@@ -69,7 +71,7 @@ chrome.runtime.onStartup.addListener(function(){
 
 
 
-
+  
 
 
 
